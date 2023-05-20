@@ -1,7 +1,7 @@
 ## Aula contruindo uma API de noticias com Laravel
 
 - Ambiente
-- Migrations Noticias
+- Migrations Noticias | img | link | titulo | sub_titulo
 - Model Noticias
 - Rota Noticias
 - Controller Noticias
