@@ -15,6 +15,12 @@ use App\Http\Controllers\NoticiasController;
 Route::get('/',[NoticiasController::class,'listar']);
 Route::post('/',[NoticiasController::class,'Cadastrar']);
 
+use App\Http\Controllers\Noticias_DestaquesController;
+
+Route::post('/cadastrar',[Noticias_DestaquesController::class,'Cadastrar']);
+Route::get('/listar',[Noticias_DestaquesController::class,'listar']);
+
+
 
 
 
