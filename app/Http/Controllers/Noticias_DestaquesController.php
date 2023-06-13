@@ -10,8 +10,13 @@ class Noticias_DestaquesController extends Controller
 {
     public function listar()
     {
+<<<<<<< HEAD
         
         $noticias_Destaques = NoticiasDestaques::all();
+=======
+
+        $noticias_Destaques = Noticias_Destaques::all();
+>>>>>>> 7008b6ca983a6f6d2f3ed21dede86b2fd8616163
 
         return response()->json([
             "messege" => "Listagem de noticias em destaques",
@@ -22,14 +27,14 @@ class Noticias_DestaquesController extends Controller
 
     public function Cadastrar(Request $request){
         //recebendo os dados
-        $imagem_destaque = $request->input('imagem');
-        $link_destaque = $request->input('link');
-        $titulo_destaque = $request->input('titulo');
+        $imagem_destaque  = $request->input('imagem');
+        $link_destaque    = $request->input('link');
+        $titulo_destaque  = $request->input('titulo');
 
         //debugando os dados
-        //dd($imagem_destaque);
+        // dd($imagem_destaque);
 
-        //Usando o model para salvar no Banco
+        //Usando o Model para salvar no banco
         $newNoticia_Destaques = new NoticiasDestaques();
         $newNoticia_Destaques->link = $link_destaque ;
         $newNoticia_Destaques->imagem = $imagem_destaque ;
@@ -42,5 +47,9 @@ class Noticias_DestaquesController extends Controller
         ]);
 
 
+    }
+
+    public function novo(){
+        return view('cadastrar');
     }
 }

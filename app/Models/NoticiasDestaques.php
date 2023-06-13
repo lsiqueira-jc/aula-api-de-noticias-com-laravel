@@ -13,6 +13,10 @@ class NoticiasDestaques extends Model
         "imagem",
         "link",
         "titulo"
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 7008b6ca983a6f6d2f3ed21dede86b2fd8616163
     ];
 }
