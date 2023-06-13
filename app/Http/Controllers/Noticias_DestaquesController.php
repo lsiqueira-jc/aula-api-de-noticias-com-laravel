@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Noticias_Destaques;
+use App\Models\NoticiasDestaques;
 
 class Noticias_DestaquesController extends Controller
 {
     public function listar()
     {
         
-        $noticias_Destaques = Noticias_Destaques::all();
+        $noticias_Destaques = NoticiasDestaques::all();
 
         return response()->json([
             "messege" => "Listagem de noticias em destaques",
@@ -23,16 +23,17 @@ class Noticias_DestaquesController extends Controller
     public function Cadastrar(Request $request){
         //recebendo os dados
         $imagem_destaque = $request->input('imagem');
-        $link = $request->input('link');
-        $titulo = $request->input('titulo');
+        $link_destaque = $request->input('link');
+        $titulo_destaque = $request->input('titulo');
 
         //debugando os dados
         //dd($imagem_destaque);
 
-        $newNoticia_Destaques = new Noticias_Destaques();
-        $newNoticia_Destaques->link = $link ;
-        $newNoticia_Destaques->img = $imagem_destaque ;
-        $newNoticia_Destaques->titulo = $titulo ;
+        //Usando o model para salvar no Banco
+        $newNoticia_Destaques = new NoticiasDestaques();
+        $newNoticia_Destaques->link = $link_destaque ;
+        $newNoticia_Destaques->imagem = $imagem_destaque ;
+        $newNoticia_Destaques->titulo = $titulo_destaque ;
         $newNoticia_Destaques->save();
 
         return response()->json([
