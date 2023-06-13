@@ -10,13 +10,8 @@ class Noticias_DestaquesController extends Controller
 {
     public function listar()
     {
-<<<<<<< HEAD
-        
-        $noticias_Destaques = NoticiasDestaques::all();
-=======
 
-        $noticias_Destaques = Noticias_Destaques::all();
->>>>>>> 7008b6ca983a6f6d2f3ed21dede86b2fd8616163
+        $noticias_Destaques = NoticiasDestaques::all();
 
         return response()->json([
             "messege" => "Listagem de noticias em destaques",
