@@ -21,15 +21,17 @@ class Noticias_DestaquesController extends Controller
     }
 
     public function Cadastrar(Request $request){
-        $img = $request->input('img');
+        //recebendo os dados
+        $imagem_destaque = $request->input('imagem');
         $link = $request->input('link');
-        $subTitulo = $request->input('sub_titulo');
         $titulo = $request->input('titulo');
+
+        //debugando os dados
+        //dd($imagem_destaque);
 
         $newNoticia_Destaques = new Noticias_Destaques();
         $newNoticia_Destaques->link = $link ;
-        $newNoticia_Destaques->img = $img ;
-        $newNoticia_Destaques->sub_titulo = $subTitulo ;
+        $newNoticia_Destaques->img = $imagem_destaque ;
         $newNoticia_Destaques->titulo = $titulo ;
         $newNoticia_Destaques->save();
 
