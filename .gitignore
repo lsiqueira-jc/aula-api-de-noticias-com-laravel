@@ -13,5 +13,4 @@ yarn-error.log
 /.idea
 /.vscode
 /db
-db/ib_buffer_pool
 README.md
