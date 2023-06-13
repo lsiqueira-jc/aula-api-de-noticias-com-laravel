@@ -25,6 +25,11 @@ class NoticiasController extends Controller
         $subTitulo = $request->input('sub_titulo');
         $titulo = $request->input('titulo');
 
+
+        $table->String("imagem");
+        $table->String("link");
+        $table->String("titulo");
+
         $newNoticia = new Noticia();
         $newNoticia->link = $link ;
         $newNoticia->img = $img ;
