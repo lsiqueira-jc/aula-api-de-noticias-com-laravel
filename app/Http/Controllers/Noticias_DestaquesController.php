@@ -43,4 +43,8 @@ class Noticias_DestaquesController extends Controller
 
 
     }
+
+    public function novo(){
+        return view('cadastrar');
+    }
 }
