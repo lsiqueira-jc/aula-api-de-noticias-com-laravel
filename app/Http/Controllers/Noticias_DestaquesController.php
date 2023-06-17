@@ -26,10 +26,15 @@ class Noticias_DestaquesController extends Controller
         $link_destaque    = $request->input('link');
         $titulo_destaque  = $request->input('titulo');
 
-        dd("teste");
+        //Alertas
+        $messege = 'Noticia cadastrada com sucesso!!!';
 
-        //debugando os dados
-        // dd($imagem_destaque);
+        $validaNoticia = NoticiasDestaques::where('link', $link_destaque)->first();
+
+        if($validaNoticia) {
+            $messege= "O link já existe!!!";
+            return view('feedback',compact('messege'));
+        }
 
         //Usando o Model para salvar no banco
         $newNoticia_Destaques = new NoticiasDestaques();
@@ -38,11 +43,7 @@ class Noticias_DestaquesController extends Controller
         $newNoticia_Destaques->titulo = $titulo_destaque ;
         $newNoticia_Destaques->save();
 
-        return response()->json([
-            "messege" => "Noticia em destaque cadastrada com sucesso!",
-            "data"  => $newNoticia_Destaques
-        ]);
-
+        return view('feedback', compact('messege'));
 
     }
 

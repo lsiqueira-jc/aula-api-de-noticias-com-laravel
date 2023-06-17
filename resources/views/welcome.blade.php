@@ -1,1 +1,1 @@
-<h1>API POST</h1>
+<h1>API DE NOTICIAS</h1>

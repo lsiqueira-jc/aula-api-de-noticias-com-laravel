@@ -11,22 +11,23 @@
 
 <body>
     <h1 style="text-align: center;">Cadastro de Notícias</h1>
-    <div meto style="padding: 10pt;">
+    {{-- <div meto style="padding: 10pt;"> --}}
         <form method="POST" action="/api/cadastrar">
             <div class="form-group">
                 <label for="formGroupExampleInput">Título</label>
-                <input name="titulo" type="text" class="form-control" id="formGroupExampleInput" placeholder="Título">
+                <input name="titulo" required type="text" class="form-control" id="formGroupExampleInput" placeholder="Título">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Imagem</label>
-                <input name="imagem" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Imagem">
+                <input name="imagem" required type="text" class="form-control" id="formGroupExampleInput2" placeholder="Imagem">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Link</label>
-                <input name="link" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Link">
-                <button type="button" class="btn btn-primary">Cadastrar</button>
+                <input name="link" required type="text" class="form-control" id="formGroupExampleInput2" placeholder="Link">
+                <button class="btn btn-primary">Cadastrar</button>
+            </div>
         </form>
-    </div>
+    {{-- </div> --}}
 </body>
 
 </html>
