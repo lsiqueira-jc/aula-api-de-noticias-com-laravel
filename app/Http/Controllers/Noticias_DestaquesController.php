@@ -26,6 +26,8 @@ class Noticias_DestaquesController extends Controller
         $link_destaque    = $request->input('link');
         $titulo_destaque  = $request->input('titulo');
 
+        dd("teste");
+
         //debugando os dados
         // dd($imagem_destaque);
 
