@@ -66,7 +66,7 @@ class Noticias_DestaquesController extends Controller
         $noticia->delete();
 
         return response()->json([
-            "message" => "notícia removido"
+            "message" => "notícia removida"
 
         ]);
     }
