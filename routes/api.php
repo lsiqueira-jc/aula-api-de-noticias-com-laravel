@@ -18,10 +18,15 @@ Route::get('/',[NoticiasController::class,'listar']);
 Route::post('/',[NoticiasController::class,'Cadastrar']);
 
 
-Route::post('/cadastrar',[Noticias_DestaquesController::class,'Cadastrar']);
+Route::post('/cadastrar',[Noticias_DestaquesController::class,'cadastrar']);
 Route::get('/listar',[Noticias_DestaquesController::class,'listar']);
 
-Route::delete('/deletar/{id}',[Noticias_DestaquesController::class,"deletar"]);
+Route::delete('/deletar/{id}',[Noticias_DestaquesController::class,'deletar']);
+Route::get('/buscar',[Noticias_DestaquesController::class,'buscar']);
+
+
+
+
 
 
 

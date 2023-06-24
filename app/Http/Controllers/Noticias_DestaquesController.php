@@ -20,6 +20,18 @@ class Noticias_DestaquesController extends Controller
 
     }
 
+    public function buscar(Request $request){
+        $link = $request->query("link");
+
+        $noticia=NoticiasDestaques::where("link","=",$link)->get();
+
+        return response()->json([
+            "message" => $noticia
+        
+        ]);
+
+    }
+
     public function Cadastrar(Request $request){
         //recebendo os dados
         $imagem_destaque  = $request->input('imagem');
