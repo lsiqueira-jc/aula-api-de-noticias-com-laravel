@@ -50,4 +50,26 @@ class Noticias_DestaquesController extends Controller
     public function novo(){
         return view('cadastrar');
     }
+
+
+    
+    public function deletar($id){
+        $noticia = NoticiasDestaques::find($id);
+
+        if(!$noticia){
+            return response()->json([
+                "message" => "Aluno não encontrado"
+            ],404);
+        }
+
+
+        $noticia->delete();
+
+        return response()->json([
+            "message" => "notícia removido"
+
+        ]);
+    }
+
+
 }

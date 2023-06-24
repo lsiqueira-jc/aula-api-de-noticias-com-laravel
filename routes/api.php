@@ -21,6 +21,8 @@ Route::post('/',[NoticiasController::class,'Cadastrar']);
 Route::post('/cadastrar',[Noticias_DestaquesController::class,'Cadastrar']);
 Route::get('/listar',[Noticias_DestaquesController::class,'listar']);
 
+Route::delete('/deletar/{id}',[Noticias_DestaquesController::class,"deletar"]);
+
 
 
 
