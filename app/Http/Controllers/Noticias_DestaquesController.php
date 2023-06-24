@@ -21,14 +21,19 @@ class Noticias_DestaquesController extends Controller
     }
 
     public function buscar(Request $request){
-        $link = $request->query("link");
+        $link = $request->input('link');
 
-        $noticia=NoticiasDestaques::where("link","=",$link)->get();
+    $noticia = NoticiasDestaques::where("link", "=", $link)->get();
 
+    if ($noticia->isEmpty()) {
         return response()->json([
-            "message" => $noticia
-        
+            "message" => "Nenhuma notícia encontrada"
         ]);
+    }
+
+    return response()->json([
+        "message" => $noticia->first()->link
+    ]);
 
     }
 
